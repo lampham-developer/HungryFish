@@ -10,8 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 7209591386965314587}
   - component: {fileID: 7209591386965314582}
-  - component: {fileID: 7209591386965314581}
-  - component: {fileID: 7209591386965314580}
   m_Layer: 0
   m_Name: Coral
   m_TagString: Untagged
@@ -74,7 +72,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1383156903
-  m_SortingLayer: 3
+  m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: e6e393a278298d44290d6771360830b7, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -87,54 +85,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!111 &7209591386965314581
-Animation:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7209591386965314586}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: fb0deacf00a91634096ba743a037d44c, type: 2}
-  m_Animations:
-  - {fileID: 7400000, guid: fb0deacf00a91634096ba743a037d44c, type: 2}
-  m_WrapMode: 0
-  m_PlayAutomatically: 1
-  m_AnimatePhysics: 0
-  m_CullingType: 0
---- !u!114 &7209591386965314580
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7209591386965314586}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 57c008f954fe54a8bb972de1018a2cb8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_RootBone: {fileID: 7209591387835896132}
-  m_BoneTransforms:
-  - {fileID: 7209591387835896132}
-  - {fileID: 7209591387522258540}
-  - {fileID: 7209591388319858319}
-  - {fileID: 7209591388066348501}
-  - {fileID: 7209591387646359851}
-  - {fileID: 7209591388380536851}
-  - {fileID: 7209591387542517818}
-  - {fileID: 7209591387844380286}
-  - {fileID: 7209591388052920186}
-  - {fileID: 7209591387497209854}
-  - {fileID: 7209591387994771797}
-  - {fileID: 7209591387712038590}
-  m_Bounds:
-    m_Center: {x: 0.20348477, y: 0.04021573, z: 0}
-    m_Extent: {x: 2.0134854, y: 1.9367759, z: 0}
-  m_UseBatching: 1
-  m_AlwaysUpdate: 1
-  m_AutoRebind: 0
 --- !u!1 &7209591387497209853
 GameObject:
   m_ObjectHideFlags: 0
