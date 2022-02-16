@@ -11,7 +11,9 @@ public class CharacterController : MonoBehaviour
 	public float smoothTime = 0.3f;
 	public float minDistance = 0;
 	Vector2 currentVelocity;
-	private float force = 100;
+	private float force = 50;
+
+	private float cooldown = 2;
 
 	public Rigidbody2D rigidbody;
 
@@ -23,10 +25,12 @@ public class CharacterController : MonoBehaviour
 
 	private void FixedUpdate()
 	{
+		cooldown -= Time.deltaTime;
 		Move();
 
-		if (Input.GetMouseButton(0))
+		if (Input.GetMouseButtonDown(0))
 		{
+			
 			useSkill();
 		}
 	}
@@ -64,14 +68,21 @@ public class CharacterController : MonoBehaviour
 
 	private void useSkill()
     {
-        if (facingRight)
+		if(cooldown <= 0)
         {
-			rigidbody.AddForce(new Vector2(force, 0f));
+			Vector2 destination;
+			if (facingRight)
+			{
+				destination = new Vector2(transform.position.x + 50, transform.position.y);
 
+			}
+			else
+			{
+				destination = new Vector2(transform.position.x - 50, transform.position.y);
+			}
+			transform.position = Vector2.LerpUnclamped(transform.position, destination, 0.1f);
+			cooldown = 5;
 		}
-        else
-        {
-			rigidbody.AddForce(new Vector2(force * -1, 0f));
-		}
+		
     }
 }

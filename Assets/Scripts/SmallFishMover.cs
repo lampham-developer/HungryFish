@@ -63,7 +63,6 @@ public class SmallFishMover : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D hitInfo)
     {
-        Debug.Log(hitInfo.gameObject.tag);
         if (hitInfo.gameObject.tag == "SharkMounth" )
         {
             Destroy(gameObject);
