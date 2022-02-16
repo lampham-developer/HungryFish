@@ -11,6 +11,10 @@ public class CharacterController : MonoBehaviour
 	public float smoothTime = 0.3f;
 	public float minDistance = 0;
 	Vector2 currentVelocity;
+	private float force = 100;
+
+	public Rigidbody2D rigidbody;
+
 
 	private void Awake()
 	{
@@ -20,6 +24,11 @@ public class CharacterController : MonoBehaviour
 	private void FixedUpdate()
 	{
 		Move();
+
+		if (Input.GetMouseButton(0))
+		{
+			useSkill();
+		}
 	}
 
 
@@ -52,4 +61,17 @@ public class CharacterController : MonoBehaviour
 		theScale.x *= -1;
 		transform.localScale = theScale;
 	}
+
+	private void useSkill()
+    {
+        if (facingRight)
+        {
+			rigidbody.AddForce(new Vector2(force, 0f));
+
+		}
+        else
+        {
+			rigidbody.AddForce(new Vector2(force * -1, 0f));
+		}
+    }
 }
