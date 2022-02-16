@@ -5,7 +5,7 @@ using UnityEngine;
 public class SpawnSmallFish : MonoBehaviour
 {
     // Start is called before the first frame update
-    [SerializeField]
+    /*[SerializeField]
     GameObject smallFish;
     [SerializeField]
     Camera mainCamera;
@@ -40,6 +40,6 @@ public class SpawnSmallFish : MonoBehaviour
             GameObject obj = Instantiate<GameObject>(smallFish,new Vector3(x,y,0), Quaternion.identity);
             timer.Run();
         }
-    }
+    }*/
    
 }

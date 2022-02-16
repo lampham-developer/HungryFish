@@ -36,7 +36,7 @@ public class SmallFishMover : MonoBehaviour
             timer.Run();
 
         }
-        GameObject player = GameObject.FindGameObjectWithTag("Player");
+        GameObject player = GameObject.FindGameObjectWithTag("AShark");
        
     
     
@@ -46,7 +46,7 @@ public class SmallFishMover : MonoBehaviour
 
     }
      void Run(){
-        GameObject player = GameObject.FindGameObjectWithTag("Player");
+        GameObject player = GameObject.FindGameObjectWithTag("AShark");
         float step =runSpeed* Time.deltaTime;
     
     	Vector2 point = new Vector2(player.transform.position.x, player.transform.position.y);
@@ -55,9 +55,18 @@ public class SmallFishMover : MonoBehaviour
 
     }
      float GetDistanceWithPlayer(){
-          GameObject player = GameObject.FindGameObjectWithTag("Player");
+          GameObject player = GameObject.FindGameObjectWithTag("AShark");
         return  Vector3.Distance(player.transform.position, gameObject.transform.position);
 
 
+    }
+
+    void OnTriggerEnter2D(Collider2D hitInfo)
+    {
+        Debug.Log(hitInfo.gameObject.tag);
+        if (hitInfo.gameObject.tag == "SharkMounth" )
+        {
+            Destroy(gameObject);
+        }
     }
 }
