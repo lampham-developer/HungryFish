@@ -4,42 +4,74 @@ using UnityEngine;
 
 public class SpawnSmallFish : MonoBehaviour
 {
-    // Start is called before the first frame update
-    /*[SerializeField]
+    //Start is called before the first frame update
+    [SerializeField]
     GameObject smallFish;
     [SerializeField]
+    GameObject smallFish1;
+    [SerializeField]
+    GameObject smallFish2;
+    [SerializeField]
     Camera mainCamera;
-     Timer timer;
+    Timer timer;
     void Start()
     {
         timer = gameObject.AddComponent<Timer>();
-        timer.Duration =3f;
+        timer.Duration = 1f;
         timer.Run();
+
     }
 
     // Update is called once per frame
     void Update()
     {
-         float x1 =mainCamera.nearClipPlane;
-         print(mainCamera.nearClipPlane);
-        float minX = -7.9f;
-        float minY = -3.9f;
-        float maxX = 7.9f;
-        float maxY = 3.9f;
-        float x =Random.Range(minX,maxX);
-        while(x <2 && x>-2){
+        float width = GetComponent<SpriteRenderer>().bounds.size.x;
+        float height = GetComponent<SpriteRenderer>().bounds.size.y;
 
-              x =Random.Range(minX,maxX);
-        }
-        float y =Random.Range(minY,maxY);
-        while(y <1 && x>-1){
 
-              y =Random.Range(minY,maxY);
+
+        float minX = transform.position.x - width / 2;
+        float maxX = transform.position.x + width / 2;
+        float maxY = transform.position.y + width / 2;
+        float minY = transform.position.x - width / 2;
+        float x = Random.Range(-50, 50);
+        while (x < maxX && x > -minX)
+        {
+
+            x = Random.Range(-50, 50);
         }
-        if(timer.Finished){
-            GameObject obj = Instantiate<GameObject>(smallFish,new Vector3(x,y,0), Quaternion.identity);
+        float y = Random.Range(-50, 50);
+        while (y < maxY && x > minY)
+        {
+
+            y = Random.Range(-50, 50);
+        }
+        if (timer.Finished)
+        {
+            int type = Random.Range(1, 4);
+
+            switch (type)
+            {
+                case 1:
+                    GameObject obj = Instantiate<GameObject>(smallFish, new Vector3(x, y, 0), Quaternion.identity);
+
+                    break;
+                case 2:
+                    GameObject aSmallFish1 = Instantiate<GameObject>(smallFish1, new Vector3(x, y, 0), Quaternion.identity);
+
+                    break;
+                case 3:
+                    GameObject aSmallFish2 = Instantiate<GameObject>(smallFish1, new Vector3(x, y, 0), Quaternion.identity);
+                    GameObject aSmallFish2_1 = Instantiate<GameObject>(smallFish1, new Vector3(x + 1, y + 1, 0), Quaternion.identity);
+                    GameObject aSmallFish2_2 = Instantiate<GameObject>(smallFish1, new Vector3(x - 1, y - 1, 0), Quaternion.identity);
+                    GameObject aSmallFish2_3 = Instantiate<GameObject>(smallFish1, new Vector3(x + 1, y, 0), Quaternion.identity);
+                    break;
+                default: break;
+            }
+
             timer.Run();
         }
-    }*/
-   
+
+    }
+
 }
