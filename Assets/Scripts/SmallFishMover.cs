@@ -2,16 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SmallFishMover : MonoBehaviour
+public class SmallFishMover : AbstractSmallFish
 {
-    Timer timer;
+   
     float normalSpeed = 1f;
     float runSpeed = 3f;
-    private bool facingRight = false;
-    Vector2 direction;
+   
+   
     // Start is called before the first frame update
-    void Start()
+    public override void Start()
     {
+        facingRight = false;
         timer = gameObject.AddComponent<Timer>();
         timer.Duration = 5f;
         timer.Run();
@@ -19,10 +20,10 @@ public class SmallFishMover : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    public override void Update()
     {
 
-        if (GetDistanceWithPlayer() < 5)
+        if (base.GetDistanceWithPlayer() < 5)
         {
             Run();
 
@@ -33,24 +34,15 @@ public class SmallFishMover : MonoBehaviour
         }
             if (direction.x > 0 && !facingRight)
         {
-            Flip();
+            base.Flip();
         }
         else if (direction.x < 0 && facingRight)
         {
-            Flip();
+            base.Flip();
         }
     }
-    private void Flip()
-    {
-        // Switch the way the player is labelled as facing.
-        facingRight = !facingRight;
-
-        // Multiply the player's x local scale by -1.
-        Vector3 theScale = transform.localScale;
-        theScale.x *= -1;
-        transform.localScale = theScale;
-    }
-    void MoveSlowly()
+    
+    public override void MoveSlowly()
     {
         if (timer.Finished)
         {
@@ -67,7 +59,7 @@ public class SmallFishMover : MonoBehaviour
 
 
     }
-    void Run()
+    public override  void Run()
     {
         GameObject player = GameObject.FindGameObjectWithTag("AShark");
         float step = runSpeed * Time.deltaTime;
@@ -77,13 +69,7 @@ public class SmallFishMover : MonoBehaviour
 
 
     }
-    float GetDistanceWithPlayer()
-    {
-        GameObject player = GameObject.FindGameObjectWithTag("AShark");
-        return Vector3.Distance(player.transform.position, gameObject.transform.position);
-
-
-    }
+    
 
     void OnTriggerEnter2D(Collider2D hitInfo)
     {
