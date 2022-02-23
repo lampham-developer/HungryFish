@@ -61,10 +61,10 @@ public class SpawnSmallFish : MonoBehaviour
 
                     break;
                 case 3:
-                    GameObject aSmallFish2 = Instantiate<GameObject>(smallFish1, new Vector3(x, y, 0), Quaternion.identity);
-                    GameObject aSmallFish2_1 = Instantiate<GameObject>(smallFish1, new Vector3(x + 1, y + 1, 0), Quaternion.identity);
-                    GameObject aSmallFish2_2 = Instantiate<GameObject>(smallFish1, new Vector3(x - 1, y - 1, 0), Quaternion.identity);
-                    GameObject aSmallFish2_3 = Instantiate<GameObject>(smallFish1, new Vector3(x + 1, y, 0), Quaternion.identity);
+                    GameObject aSmallFish2 = Instantiate<GameObject>(smallFish2, new Vector3(x, y, 0), Quaternion.identity);
+                    GameObject aSmallFish2_1 = Instantiate<GameObject>(smallFish2, new Vector3(x + 1, y + 1, 0), Quaternion.identity);
+                    GameObject aSmallFish2_2 = Instantiate<GameObject>(smallFish2, new Vector3(x - 1, y - 1, 0), Quaternion.identity);
+                    GameObject aSmallFish2_3 = Instantiate<GameObject>(smallFish2, new Vector3(x + 1, y, 0), Quaternion.identity);
                     break;
                 default: break;
             }
