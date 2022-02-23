@@ -6,6 +6,8 @@ public class SmallFish1 : AbstractSmallFish
 {
      float normalSpeed = 1f;
     float runSpeed = 4f;
+    private float increaseScore=15f;
+    private float increaseHealth=12f;
     public override void MoveSlowly()
     {
        if (timer.Finished)
@@ -60,10 +62,13 @@ public class SmallFish1 : AbstractSmallFish
             base.Flip();
         }
     }
-    void OnTriggerEnter2D(Collider2D hitInfo)
+     void OnTriggerEnter2D(Collider2D hitInfo)
     {
         if (hitInfo.gameObject.tag == "SharkMounth")
         {
+            CharacterController.CharacterSingleton.increaseHealth(increaseHealth);
+            GameController.GameControllerSingleton.scoreUp(increaseScore);
+            CharacterController.CharacterSingleton.playAudio();
             Destroy(gameObject);
         }
     }

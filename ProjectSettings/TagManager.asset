@@ -7,6 +7,8 @@ TagManager:
   - AShark
   - Creep
   - SharkMounth
+  - Mine
+  - SharkBody
   layers:
   - Default
   - TransparentFX

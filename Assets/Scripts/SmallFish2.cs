@@ -8,7 +8,8 @@ public class SmallFish2 : AbstractSmallFish
     float runSpeed = 3f;
     int active = 0;
     Vector2 groupDirection = new Vector2(1, 0);
-
+    private float increaseScore=5f;
+    private float increaseHealth=5f;
 
     public override void MoveSlowly()
     {
@@ -42,7 +43,11 @@ public class SmallFish2 : AbstractSmallFish
 
     public override void Start()
     {
-        base.Start();
+        facingRight = false;
+        timer = gameObject.AddComponent<Timer>();
+        timer.Duration = 5f;
+        timer.Run();
+        direction = new Vector2(Random.Range(-1, 1), Random.Range(-1, 1));
     }
 
 
@@ -98,6 +103,9 @@ public class SmallFish2 : AbstractSmallFish
     {
         if (hitInfo.gameObject.tag == "SharkMounth")
         {
+            CharacterController.CharacterSingleton.increaseHealth(increaseHealth);
+            GameController.GameControllerSingleton.scoreUp(increaseScore);
+            CharacterController.CharacterSingleton.playAudio();
             Destroy(gameObject);
         }
     }
