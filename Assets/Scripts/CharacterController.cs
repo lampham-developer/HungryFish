@@ -27,6 +27,7 @@ public class CharacterController : MonoBehaviour
 	public Slider staminaSlider;
 	public Image healthFill;
 	public Gradient healthGradient;
+	AudioSource audio;
 
 
 	private void Awake()
@@ -39,6 +40,8 @@ public class CharacterController : MonoBehaviour
 
 		staminaSlider.maxValue = cooldown;
 		staminaSlider.value = currentCooldown;
+		audio = GetComponent<AudioSource>();
+		
 	}
 
 	private void Update()
@@ -59,6 +62,7 @@ public class CharacterController : MonoBehaviour
 		{
 			useSkill();
 		}
+		
 	}
 
 
@@ -116,6 +120,10 @@ public class CharacterController : MonoBehaviour
     {
 		healthSlider.value = currentHealth;
 		healthFill.color = healthGradient.Evaluate(healthSlider.normalizedValue);
+	}
+
+	public void playAudio(){
+		audio.Play(); 
 	}
 
 	private void updateStaminaBar()

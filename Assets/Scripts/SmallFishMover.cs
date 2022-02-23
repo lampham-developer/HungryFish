@@ -79,6 +79,7 @@ public class SmallFishMover : AbstractSmallFish
         {
             CharacterController.CharacterSingleton.increaseHealth(increaseHealth);
             GameController.GameControllerSingleton.scoreUp(increaseScore);
+            CharacterController.CharacterSingleton.playAudio();
             Destroy(gameObject);
         }
     }
