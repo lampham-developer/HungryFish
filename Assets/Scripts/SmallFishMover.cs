@@ -7,6 +7,8 @@ public class SmallFishMover : AbstractSmallFish
    
     float normalSpeed = 1f;
     float runSpeed = 3f;
+    float increaseHealth = 10f;
+    float increaseScore = 10f;
    
    
     // Start is called before the first frame update
@@ -75,6 +77,8 @@ public class SmallFishMover : AbstractSmallFish
     {
         if (hitInfo.gameObject.tag == "SharkMounth")
         {
+            CharacterController.CharacterSingleton.increaseHealth(increaseHealth);
+            GameController.GameControllerSingleton.scoreUp(increaseScore);
             Destroy(gameObject);
         }
     }
