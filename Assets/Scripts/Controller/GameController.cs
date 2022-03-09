@@ -45,5 +45,8 @@ public class GameController : MonoBehaviour
     public void scoreUp(float score)
     {
 
+        //todo set text for score label
+
+        SharkDetails.sharkDetailsSingleton.increaseExp(score);
     }
 }

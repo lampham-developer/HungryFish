@@ -396,6 +396,10 @@ PrefabInstance:
       value: SharkBody
       objectReference: {fileID: 0}
     - target: {fileID: 2916242110266465092, guid: f25c72a9213b51c429e3a2ba5ed14bcb, type: 3}
+      propertyPath: camera
+      value: 
+      objectReference: {fileID: 88551838}
+    - target: {fileID: 2916242110266465092, guid: f25c72a9213b51c429e3a2ba5ed14bcb, type: 3}
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
@@ -526,6 +530,14 @@ PrefabInstance:
     - target: {fileID: 7883144613881396855, guid: f25c72a9213b51c429e3a2ba5ed14bcb, type: 3}
       propertyPath: m_RootOrder
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7883144613881396855, guid: f25c72a9213b51c429e3a2ba5ed14bcb, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 7883144613881396855, guid: f25c72a9213b51c429e3a2ba5ed14bcb, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.25
       objectReference: {fileID: 0}
     - target: {fileID: 7883144613881396855, guid: f25c72a9213b51c429e3a2ba5ed14bcb, type: 3}
       propertyPath: m_LocalPosition.x
@@ -93238,7 +93250,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.7777778, y: 1}
+    m_SensorSize: {x: 1.3333334, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
