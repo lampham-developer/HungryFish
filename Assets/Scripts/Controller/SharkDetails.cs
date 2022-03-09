@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class SharkDetails : MonoBehaviour
 {
+    public static SharkDetails sharkDetailsSingleton;
 
     private int currentLevel = 1;
     private float healthPer = 10;
@@ -12,14 +13,18 @@ public class SharkDetails : MonoBehaviour
 
     private float baseHealth = 100;
     private float baseMovementSpeed = 5;
-    private float baseSize = 0.5f;
+    private float baseSize = 1f;
 
-    private float requiredExp = 100;
+    private float baseExp = 10;
+    private float requiredExp = 0;
     private float requiredExpUp = 10;
+
+    private float currentExp = 0;
 
     private void Awake()
     {
         loadLevel();
+        sharkDetailsSingleton = this;
     }
 
     // Start is called before the first frame update
@@ -37,7 +42,7 @@ public class SharkDetails : MonoBehaviour
     private void loadLevel()
     {
         //todo load current level from local data
-        requiredExp = requiredExp + requiredExpUp * currentLevel;
+        requiredExp = baseExp + requiredExpUp * currentLevel;
     }
 
     public float getMaxHealth()
@@ -55,5 +60,23 @@ public class SharkDetails : MonoBehaviour
         return baseSize + currentLevel * sizeUp;
     }
 
+    public void increaseExp(float exp)
+    {
+        currentExp += exp;
+        Debug.Log(currentExp);
+        calculateExp();
+    }
 
+    private void calculateExp()
+    {
+        if(currentExp >= requiredExp)
+        {
+            Debug.Log("lvl up");
+            currentLevel++;
+            currentExp -= requiredExp;
+            requiredExp = baseExp + currentLevel * requiredExpUp;
+
+            CharacterController.CharacterSingleton.upLevelShark(getMaxSpeed(), getMaxHealth(), getMaxSize());
+        }
+    }
 }
