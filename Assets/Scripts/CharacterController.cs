@@ -42,6 +42,7 @@ public class CharacterController : MonoBehaviour
         staminaSlider.maxValue = cooldown;
         staminaSlider.value = currentCooldown;
         audio = GetComponent<AudioSource>();
+        rigidbody = gameObject.GetComponent<Rigidbody2D>();
 
     }
 
@@ -115,7 +116,8 @@ public class CharacterController : MonoBehaviour
             {
                 destination = new Vector2(transform.position.x - 50, transform.position.y);
             }
-            transform.position = Vector2.LerpUnclamped(transform.position, destination, 0.1f);
+            rigidbody.AddForce(destination.normalized*3f,ForceMode2D.Impulse);
+           // transform.position = Vector2.LerpUnclamped(transform.position, destination, 0.1f);
             currentCooldown = 0;
         }
 
