@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 6081489845742237819}
   - component: {fileID: 743595995588766111}
   m_Layer: 6
-  m_Name: SmallFish2
+  m_Name: HerdFish
   m_TagString: Creep
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
