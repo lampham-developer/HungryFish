@@ -62,6 +62,8 @@ public class SmallFish1 : AbstractSmallFish
             base.Flip();
         }
     }
+
+
      void OnTriggerEnter2D(Collider2D hitInfo)
     {
         if (hitInfo.gameObject.tag == "SharkMounth")

@@ -13,6 +13,7 @@ public class CharacterController : MonoBehaviour
     public float maxMoveSpeed = 5;
     public float smoothTime = 0.3f;
     public float minDistance = 0;
+    public Camera camera;
     Vector2 currentVelocity;
     private float force = 50;
 
@@ -30,6 +31,9 @@ public class CharacterController : MonoBehaviour
     public Gradient healthGradient;
     AudioSource audio;
 
+    private Vector3 currentScale;
+    private float currentCameraScale;
+
 
     private void Awake()
     {
@@ -42,6 +46,9 @@ public class CharacterController : MonoBehaviour
         staminaSlider.maxValue = cooldown;
         staminaSlider.value = currentCooldown;
         audio = GetComponent<AudioSource>();
+
+        currentScale = transform.localScale;
+        currentCameraScale = camera.orthographicSize;
 
     }
 
@@ -89,15 +96,27 @@ public class CharacterController : MonoBehaviour
         }
     }
 
+    private void setMaxHealthBar()
+    {
+        healthSlider.maxValue = maxHealth;
+    }
+
 
     private void Flip()
     {
         // Switch the way the player is labelled as facing.
         facingRight = !facingRight;
 
-        // Multiply the player's x local scale by -1.
+        // Multiply the player's x local scale by -1
         Vector3 theScale = transform.localScale;
-        theScale.x *= -1;
+        if (facingRight)
+        {
+            theScale.x = Mathf.Abs(theScale.x);
+        }else
+        {
+            theScale.x = Mathf.Abs(theScale.x) * -1;
+        }
+
         transform.localScale = theScale;
     }
 
@@ -184,5 +203,23 @@ public class CharacterController : MonoBehaviour
 
         updateHealthBar();
 
+    }
+
+    public void upLevelShark(float mvSpeed, float health, float size)
+    {
+        maxMoveSpeed = mvSpeed;
+        maxHealth = health;
+
+        setMaxHealthBar();
+        changeSharkSize(size);
+    }
+
+    private void changeSharkSize(float newSize)
+    {
+        currentScale *= newSize;
+        currentCameraScale *= newSize;
+
+        transform.localScale = currentScale;
+        camera.orthographicSize = currentCameraScale;
     }
 }
