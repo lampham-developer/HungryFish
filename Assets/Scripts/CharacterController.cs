@@ -33,6 +33,7 @@ public class CharacterController : MonoBehaviour
 
     private Vector3 currentScale;
     private float currentCameraScale;
+    int current_fish =0;
 
 
     private void Awake()

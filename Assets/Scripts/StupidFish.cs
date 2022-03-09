@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SmallFishMover : AbstractSmallFish
+public class StupidFish : AbstractSmallFish
 {
    
     float normalSpeed = 1f;

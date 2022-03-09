@@ -14,6 +14,8 @@ public class SpawnSmallFish : MonoBehaviour
     [SerializeField]
     Camera mainCamera;
     Timer timer;
+    int max_fish = 40;
+    
     void Start()
     {
         timer = gameObject.AddComponent<Timer>();
@@ -49,25 +51,28 @@ public class SpawnSmallFish : MonoBehaviour
         if (timer.Finished)
         {
             int type = Random.Range(1, 4);
-
-            switch (type)
+            if(GameController.GameControllerSingleton.current_fish<max_fish){
+                 switch (type)
             {
                 case 1:
                     GameObject obj = Instantiate<GameObject>(smallFish, new Vector3(x, y, 0), Quaternion.identity);
-
+                    GameController.GameControllerSingleton.spawnFish(1);
                     break;
                 case 2:
                     GameObject aSmallFish1 = Instantiate<GameObject>(smallFish1, new Vector3(x, y, 0), Quaternion.identity);
-
+                    GameController.GameControllerSingleton.spawnFish(1);
                     break;
                 case 3:
                     GameObject aSmallFish2 = Instantiate<GameObject>(smallFish2, new Vector3(x, y, 0), Quaternion.identity);
                     GameObject aSmallFish2_1 = Instantiate<GameObject>(smallFish2, new Vector3(x + 1, y + 1, 0), Quaternion.identity);
                     GameObject aSmallFish2_2 = Instantiate<GameObject>(smallFish2, new Vector3(x - 1, y - 1, 0), Quaternion.identity);
                     GameObject aSmallFish2_3 = Instantiate<GameObject>(smallFish2, new Vector3(x + 1, y, 0), Quaternion.identity);
+                    GameController.GameControllerSingleton.spawnFish(4);
                     break;
                 default: break;
             }
+            }
+           
 
             timer.Run();
         }
