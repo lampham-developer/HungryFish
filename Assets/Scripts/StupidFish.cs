@@ -79,6 +79,7 @@ public class StupidFish : AbstractSmallFish
         {
             CharacterController.CharacterSingleton.increaseHealth(increaseHealth);
             GameController.GameControllerSingleton.scoreUp(increaseScore);
+            GameController.GameControllerSingleton.removeFish();
             CharacterController.CharacterSingleton.playAudio();
             Destroy(gameObject);
         }

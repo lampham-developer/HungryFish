@@ -14,12 +14,13 @@ public class SpawnSmallFish : MonoBehaviour
     [SerializeField]
     Camera mainCamera;
     Timer timer;
-    int max_fish = 40;
+    int max_fish = 200;
+    
     
     void Start()
     {
         timer = gameObject.AddComponent<Timer>();
-        timer.Duration = 1f;
+        timer.Duration = .5f;
         timer.Run();
 
     }
@@ -28,25 +29,26 @@ public class SpawnSmallFish : MonoBehaviour
     void Update()
     {
         float width = GetComponent<SpriteRenderer>().bounds.size.x;
-        float height = GetComponent<SpriteRenderer>().bounds.size.y;
-
+        float height = GetComponent<SpriteRenderer>().bounds.size.y;  
 
 
         float minX = transform.position.x - width / 2;
-        float maxX = transform.position.x + width / 2;
-        float maxY = transform.position.y + width / 2;
-        float minY = transform.position.x - width / 2;
-        float x = Random.Range(-50, 50);
-        while (x < maxX && x > -minX)
+        float maxX =transform.position.x + width / 2;
+        float maxY = transform.position.y + height / 2;
+        float minY = transform.position.y -height / 2;
+        
+            float x = Random.Range(-100, 100);
+        while (x < maxX && x > minX)
         {
 
-            x = Random.Range(-50, 50);
+            x = Random.Range(-100, 100);
         }
-        float y = Random.Range(-50, 50);
-        while (y < maxY && x > minY)
+        float y = Random.Range(-20, 20);
+       
+        while (y < maxY && y > minY)
         {
 
-            y = Random.Range(-50, 50);
+            y = Random.Range(-20, 20);
         }
         if (timer.Finished)
         {

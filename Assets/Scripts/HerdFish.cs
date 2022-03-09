@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SmallFish2 : AbstractSmallFish
+public class HerdFish : AbstractSmallFish
 {
     float normalSpeed = 1f;
     float runSpeed = 3f;
@@ -104,7 +104,8 @@ public class SmallFish2 : AbstractSmallFish
         if (hitInfo.gameObject.tag == "SharkMounth")
         {
             CharacterController.CharacterSingleton.increaseHealth(increaseHealth);
-            GameController.GameControllerSingleton.scoreUp(increaseScore);
+            //GameController.GameControllerSingleton.scoreUp(increaseScore);
+            GameController.GameControllerSingleton.removeFish();
             CharacterController.CharacterSingleton.playAudio();
             Destroy(gameObject);
         }

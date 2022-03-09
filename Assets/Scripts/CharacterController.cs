@@ -33,8 +33,7 @@ public class CharacterController : MonoBehaviour
 
     private Vector3 currentScale;
     private float currentCameraScale;
-    int current_fish =0;
-
+   
 
     private void Awake()
     {
@@ -108,7 +107,8 @@ public class CharacterController : MonoBehaviour
     {
         // Switch the way the player is labelled as facing.
         facingRight = !facingRight;
-
+         rigidbody.velocity = Vector3.zero;
+        rigidbody.angularVelocity = 0; 
         // Multiply the player's x local scale by -1
         Vector3 theScale = transform.localScale;
         if (facingRight)
