@@ -5,6 +5,7 @@ using UnityEngine;
 public class GameController : MonoBehaviour
 {
     public static GameController GameControllerSingleton;
+     public int current_fish =0;
 
     void Awake()
     {
@@ -48,5 +49,11 @@ public class GameController : MonoBehaviour
         //todo set text for score label
 
         SharkDetails.sharkDetailsSingleton.increaseExp(score);
+    }
+    public void spawnFish(int n){
+        current_fish+=n;
+    }
+    public void removeFish(){
+        current_fish--;
     }
 }

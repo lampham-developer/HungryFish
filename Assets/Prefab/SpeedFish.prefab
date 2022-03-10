@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: -8847035632703104813}
   - component: {fileID: -3797348726698355175}
   m_Layer: 6
-  m_Name: SmallFish1
+  m_Name: SpeedFish
   m_TagString: Creep
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -73,8 +73,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -879611579
-  m_SortingLayer: 2
+  m_SortingLayerID: 1625420081
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 458251035dc1c7147a163c55dba82730, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -143,6 +143,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 6290659756215845075}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 71df27e41e4022a4c8c028ebc4ec88a1, type: 3}
+  m_Script: {fileID: 11500000, guid: 60ac2a90dc7eac148bc751755643b120, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
