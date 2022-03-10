@@ -5,6 +5,8 @@ using UnityEngine;
 public class GameController : MonoBehaviour
 {
     public static GameController GameControllerSingleton;
+    [SerializeField]
+    GameObject pauseMenuPopupTemplate;
      public int current_fish =0;
      public int current_mine =0;
 
@@ -32,6 +34,7 @@ public class GameController : MonoBehaviour
     public void pauseGame()
     {
         Time.timeScale = 0f;
+        Main.Instance.InitUI(pauseMenuPopupTemplate);
     }
 
     public void resumeGame()
