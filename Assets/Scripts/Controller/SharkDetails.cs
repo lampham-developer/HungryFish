@@ -63,7 +63,7 @@ public class SharkDetails : MonoBehaviour
     public void increaseExp(float exp)
     {
         currentExp += exp;
-        Debug.Log(currentExp);
+        //Debug.Log(currentExp);
         calculateExp();
     }
 

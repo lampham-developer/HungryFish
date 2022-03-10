@@ -33,7 +33,7 @@ public class CharacterController : MonoBehaviour
 
     private Vector3 currentScale;
     private float currentCameraScale;
-
+   
 
     private void Awake()
     {
@@ -46,6 +46,7 @@ public class CharacterController : MonoBehaviour
         staminaSlider.maxValue = cooldown;
         staminaSlider.value = currentCooldown;
         audio = GetComponent<AudioSource>();
+        rigidbody = gameObject.GetComponent<Rigidbody2D>();
 
         currentScale = transform.localScale;
         currentCameraScale = camera.orthographicSize;
@@ -106,7 +107,8 @@ public class CharacterController : MonoBehaviour
     {
         // Switch the way the player is labelled as facing.
         facingRight = !facingRight;
-
+         rigidbody.velocity = Vector3.zero;
+        rigidbody.angularVelocity = 0; 
         // Multiply the player's x local scale by -1
         Vector3 theScale = transform.localScale;
         if (facingRight)
@@ -134,7 +136,8 @@ public class CharacterController : MonoBehaviour
             {
                 destination = new Vector2(transform.position.x - 50, transform.position.y);
             }
-            transform.position = Vector2.LerpUnclamped(transform.position, destination, 0.1f);
+            rigidbody.AddForce(destination.normalized*3f,ForceMode2D.Impulse);
+           // transform.position = Vector2.LerpUnclamped(transform.position, destination, 0.1f);
             currentCooldown = 0;
         }
 
