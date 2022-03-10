@@ -5,6 +5,8 @@ using UnityEngine;
 public class GameController : MonoBehaviour
 {
     public static GameController GameControllerSingleton;
+    [SerializeField]
+    GameObject pauseMenuPopupTemplate;
 
     void Awake()
     {
@@ -30,6 +32,7 @@ public class GameController : MonoBehaviour
     public void pauseGame()
     {
         Time.timeScale = 0f;
+        Main.Instance.InitUI(pauseMenuPopupTemplate);
     }
 
     public void resumeGame()
