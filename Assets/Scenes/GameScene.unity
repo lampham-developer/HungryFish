@@ -256,6 +256,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fa287d3e998fc7d478019beecbd51ff8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  smallFish: {fileID: 18239459585399154, guid: b8b6868de16319a4f9f216f6140c864b, type: 3}
   smallFish1: {fileID: 6290659756215845075, guid: 1a2b16e37b31e06409204bbb0f5e2a2b, type: 3}
   smallFish2: {fileID: 2760366171266890482, guid: 39b1740e4a8bd84429abde1b1c6d7c63, type: 3}
   mainCamera: {fileID: 0}
@@ -381,6 +382,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &127803239
 PrefabInstance:
@@ -797,6 +799,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 221606960}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -2.0205, y: 11.0074, z: 0}
+  m_LocalScale: {x: 1.0089065, y: 1.7783405, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 659314429}
@@ -840,6 +844,8 @@ TilemapRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 2147229605
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_ChunkSize: {x: 32, y: 32, z: 32}
   m_ChunkCullingBounds: {x: 0, y: 0, z: 0}
@@ -92949,6 +92955,7 @@ GameObject:
   m_Component:
   - component: {fileID: 659314429}
   - component: {fileID: 659314428}
+  m_Layer: 7
   m_Name: Grid
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -92981,6 +92988,7 @@ Transform:
   m_Children:
   - {fileID: 221606961}
   m_Father: {fileID: 0}
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &922546734
 GameObject:
@@ -93136,6 +93144,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1106643922
 MonoBehaviour:
