@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 7949866862692176539}
   m_Layer: 0
   m_Name: SharkBody
+  m_TagString: SharkMounth
   m_TagString: SharkBody
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
