@@ -29,7 +29,7 @@ public class MineBehaviour : MonoBehaviour
             GameObject shark = GameObject.FindGameObjectWithTag("AShark");
             GameObject obj = Instantiate<GameObject>(explosion, gameObject.transform.position, Quaternion.identity);
             shark.transform.localPosition = Vector3.Lerp (shark.transform.localPosition, -transform.localPosition, 0.1f);
-            
+            GameController.GameControllerSingleton.removeMine();
             Destroy(gameObject);
         }
        

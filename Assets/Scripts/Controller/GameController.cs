@@ -6,6 +6,7 @@ public class GameController : MonoBehaviour
 {
     public static GameController GameControllerSingleton;
      public int current_fish =0;
+     public int current_mine =0;
 
     void Awake()
     {
@@ -55,5 +56,11 @@ public class GameController : MonoBehaviour
     }
     public void removeFish(){
         current_fish--;
+    }
+    public void spawnMine(){
+        current_mine++;
+    }
+    public void removeMine(){
+        current_mine--;
     }
 }

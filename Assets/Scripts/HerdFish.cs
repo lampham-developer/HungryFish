@@ -104,7 +104,7 @@ public class HerdFish : AbstractSmallFish
         if (hitInfo.gameObject.tag == "SharkMounth")
         {
             CharacterController.CharacterSingleton.increaseHealth(increaseHealth);
-            //GameController.GameControllerSingleton.scoreUp(increaseScore);
+            GameController.GameControllerSingleton.scoreUp(increaseScore);
             GameController.GameControllerSingleton.removeFish();
             CharacterController.CharacterSingleton.playAudio();
             Destroy(gameObject);
