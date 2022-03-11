@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df54d997ddcc6c544b7546e9ea076080, type: 3}
+  m_Name: Jetpack
+  m_EditorClassIdentifier: 
+  prefab: {fileID: 7233113889289921381, guid: 29adfee711084894f809fba6f03e9ffd, type: 3}
+  accessoryType: Jetpack
+  price: 10
+  icon: {fileID: 21300000, guid: 3767a368f1e81e646b15f301c5d0684e, type: 3}
+  name: Jetpack1

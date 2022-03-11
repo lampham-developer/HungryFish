@@ -21,7 +21,7 @@ public class PopupBase : MonoBehaviour
         sequence = DOTween.Sequence();
         sequence.Append(rect.DOScale(new Vector2(1.1f, 1.1f), duration))
             .Join(canvas.DOFade(1, duration))
-            .Append(rect.DOScale(Vector2.one, duration))
+            .Append(rect.DOScale(Vector2.one, duration/3))
             .SetAutoKill(false).SetUpdate(true);
         sequence.Play();
 
