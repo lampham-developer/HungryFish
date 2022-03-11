@@ -9,6 +9,9 @@ TagManager:
   - SharkMounth
   - Mine
   - SharkBody
+  - PredatorMouth
+  - Predator
+  - PredatorBody
   layers:
   - Default
   - TransparentFX
