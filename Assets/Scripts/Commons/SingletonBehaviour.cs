@@ -6,16 +6,17 @@ namespace Commons
     public class SingletonBehaviour<T> : MonoBehaviour where T : SingletonBehaviour<T>
     {
         public static T Instance;
+        protected virtual bool isUnique { get => false; }
+        
         private void Awake()
         {
-            if (Instance != null)
+            if (isUnique && Instance!= null)
             {
                 Destroy(gameObject);
+                return;
             }
-            else
-            {
-                Instance = (T)this;
-            }
+            Instance = (T)this;
+
 
         }
     }
