@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
 
 public class SharkDetails : MonoBehaviour
 {
@@ -20,6 +22,9 @@ public class SharkDetails : MonoBehaviour
     private float requiredExpUp = 10;
 
     private float currentExp = 0;
+    public TextMeshProUGUI lvlTxt;
+
+    public Slider expSlider;
 
     private void Awake()
     {
@@ -43,6 +48,7 @@ public class SharkDetails : MonoBehaviour
     {
         //todo load current level from local data
         requiredExp = baseExp + requiredExpUp * currentLevel;
+        updateExpSlider();
     }
 
     public float getMaxHealth()
@@ -63,6 +69,7 @@ public class SharkDetails : MonoBehaviour
     public void increaseExp(float exp)
     {
         currentExp += exp;
+        expSlider.value = currentExp;
         //Debug.Log(currentExp);
         calculateExp();
     }
@@ -73,10 +80,18 @@ public class SharkDetails : MonoBehaviour
         {
             Debug.Log("lvl up");
             currentLevel++;
+            lvlTxt.text = currentLevel.ToString();
             currentExp -= requiredExp;
             requiredExp = baseExp + currentLevel * requiredExpUp;
 
+            updateExpSlider();
             CharacterController.CharacterSingleton.upLevelShark(getMaxSpeed(), getMaxHealth(), getMaxSize());
         }
+    }
+
+    private void updateExpSlider()
+    {
+        expSlider.value = currentExp;
+        expSlider.maxValue = requiredExp;
     }
 }
