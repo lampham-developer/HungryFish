@@ -1,12 +1,19 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
 
 public class GameController : MonoBehaviour
 {
     public static GameController GameControllerSingleton;
     [SerializeField]
     GameObject pauseMenuPopupTemplate;
+     public int current_fish =0;
+     public int current_mine =0;
+
+    private float currentScore = 0;
+    public TextMeshProUGUI scoreTxt;
 
     void Awake()
     {
@@ -49,7 +56,20 @@ public class GameController : MonoBehaviour
     {
 
         //todo set text for score label
-
+        currentScore += score;
+        scoreTxt.text = currentScore.ToString();
         SharkDetails.sharkDetailsSingleton.increaseExp(score);
+    }
+    public void spawnFish(int n){
+        current_fish+=n;
+    }
+    public void removeFish(){
+        current_fish--;
+    }
+    public void spawnMine(){
+        current_mine++;
+    }
+    public void removeMine(){
+        current_mine--;
     }
 }

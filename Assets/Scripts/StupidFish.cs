@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SmallFishMover : AbstractSmallFish
+public class StupidFish : AbstractSmallFish
 {
    
     float normalSpeed = 1f;
@@ -79,6 +79,7 @@ public class SmallFishMover : AbstractSmallFish
         {
             CharacterController.CharacterSingleton.increaseHealth(increaseHealth);
             GameController.GameControllerSingleton.scoreUp(increaseScore);
+            GameController.GameControllerSingleton.removeFish();
             CharacterController.CharacterSingleton.playAudio();
             Destroy(gameObject);
         }
