@@ -33,7 +33,8 @@ public class CharacterController : MonoBehaviour
 
     private Vector3 currentScale;
     private float currentCameraScale;
-   
+    
+    public float damage = 4f;
 
     private void Awake()
     {

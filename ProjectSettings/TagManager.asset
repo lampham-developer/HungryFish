@@ -9,6 +9,9 @@ TagManager:
   - SharkMounth
   - Mine
   - SharkBody
+  - PredatorMouth
+  - Predator
+  - PredatorBody
   layers:
   - Default
   - TransparentFX
@@ -18,7 +21,7 @@ TagManager:
   - UI
   - Player
   - tile
-  - 
+  - UIInfo
   - 
   - 
   - 
@@ -57,4 +60,7 @@ TagManager:
     locked: 0
   - name: tile
     uniqueID: 2147229605
+    locked: 0
+  - name: UI
+    uniqueID: 1283227175
     locked: 0
