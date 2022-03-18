@@ -15,25 +15,23 @@ public class GameController : MonoBehaviour
     private float currentScore = 0;
     public TextMeshProUGUI scoreTxt;
 
+    private float highScore = 0;
+
     void Awake()
     {
         GameControllerSingleton = this;
     }
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
-    // Update is called once per frame
-    void Update()
+    public GameController getInstance()
     {
-        
+        return GameControllerSingleton;
     }
 
     public void endGame()
     {
         Time.timeScale = 0f;
+        highScore = LocalDataController.getInstance().getHighScore();
+        saveData();
     }
 
     public void pauseGame()
@@ -54,11 +52,10 @@ public class GameController : MonoBehaviour
 
     public void scoreUp(float score)
     {
-
-        //todo set text for score label
         currentScore += score;
         scoreTxt.text = currentScore.ToString();
-        SharkDetails.sharkDetailsSingleton.increaseExp(score);
+        SharkDetails.getInstance().increaseExp(score);
+        SharkDetails.getInstance().increaseExp(score);
     }
     public void spawnFish(int n){
         current_fish+=n;
@@ -71,5 +68,15 @@ public class GameController : MonoBehaviour
     }
     public void removeMine(){
         current_mine--;
+    }
+
+    private void saveData()
+    {
+        if(currentScore > highScore)
+        {
+            LocalDataController.getInstance().setHighScore(currentScore);
+        }
+
+        SharkDetails.getInstance().saveData();
     }
 }

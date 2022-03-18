@@ -36,6 +36,10 @@ public class CharacterController : MonoBehaviour
     
     public float damage = 4f;
 
+    private float decreaseHeathThreshold = 5f;
+    private float gameTime = 0f;
+    private float decreaseHeathMultiple = 1;
+
     private void Awake()
     {
         CharacterSingleton = this;
@@ -56,6 +60,9 @@ public class CharacterController : MonoBehaviour
 
     private void Update()
     {
+        //update game time
+        gameTime += Time.deltaTime;
+
         //Add more stamina each fram
         if (currentCooldown < cooldown)
         {
@@ -77,6 +84,11 @@ public class CharacterController : MonoBehaviour
 			useSkill2();
 		}
 
+    }
+
+    public static CharacterController getInstance()
+    {
+        return CharacterSingleton;
     }
 
 
@@ -160,10 +172,12 @@ public class CharacterController : MonoBehaviour
         staminaSlider.value = currentCooldown;
     }
 
-    public void decreaseHealth(float amount)
+    public void decreaseHealth(float time)
     {
         if (currentHealth > 0)
         {
+            float amount = time * gameTime / decreaseHeathThreshold;
+
             currentHealth -= amount;
             updateHealthBar();
         }
