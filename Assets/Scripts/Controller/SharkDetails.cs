@@ -6,12 +6,12 @@ using TMPro;
 
 public class SharkDetails : MonoBehaviour
 {
-    public static SharkDetails sharkDetailsSingleton;
+    private static SharkDetails sharkDetailsSingleton;
 
-    private int currentLevel = 1;
+    private float currentLevel = 1;
     private float healthPer = 10;
     private float speedUp = 1;
-    private float sizeUp = 0.1f;
+    private float sizeUp = 0.03f;
 
     private float baseHealth = 100;
     private float baseMovementSpeed = 5;
@@ -24,41 +24,47 @@ public class SharkDetails : MonoBehaviour
     private float currentExp = 0;
     public TextMeshProUGUI lvlTxt;
 
+    private float currentGold = 0;
+    private float bonusHp = 0;
+    private float bonusSpeed = 0;
+
     public Slider expSlider;
 
     private void Awake()
     {
-        loadLevel();
+        loadData();
         sharkDetailsSingleton = this;
     }
 
-    // Start is called before the first frame update
-    void Start()
+    public static SharkDetails getInstance()
     {
-        
+        return sharkDetailsSingleton;
     }
 
-    // Update is called once per frame
-    void Update()
+    private void loadData()
     {
-        
-    }
-
-    private void loadLevel()
-    {
-        //todo load current level from local data
+        currentLevel = LocalDataController.getInstance().getSharkLevel();
         requiredExp = baseExp + requiredExpUp * currentLevel;
+        lvlTxt.text = currentLevel.ToString();
+        Debug.Log(currentLevel);
         updateExpSlider();
+
+        currentGold = LocalDataController.getInstance().getPlayerGold();
+        bonusHp = LocalDataController.getInstance().getBonusHp();
+        bonusSpeed = LocalDataController.getInstance().getBonusSpeed();
+
+
+        CharacterController.getInstance().upLevelShark(getMaxSpeed(), getMaxHealth(), getMaxSize());
     }
 
     public float getMaxHealth()
     {
-        return baseHealth + currentLevel * healthPer;
+        return baseHealth + currentLevel * healthPer + bonusHp;
     }
 
     public float getMaxSpeed()
     {
-        return baseMovementSpeed + currentLevel * speedUp;
+        return baseMovementSpeed + currentLevel * speedUp + bonusSpeed;
     }
 
     public float getMaxSize()
@@ -70,7 +76,6 @@ public class SharkDetails : MonoBehaviour
     {
         currentExp += exp;
         expSlider.value = currentExp;
-        //Debug.Log(currentExp);
         calculateExp();
     }
 
@@ -78,14 +83,13 @@ public class SharkDetails : MonoBehaviour
     {
         if(currentExp >= requiredExp)
         {
-            Debug.Log("lvl up");
             currentLevel++;
             lvlTxt.text = currentLevel.ToString();
             currentExp -= requiredExp;
             requiredExp = baseExp + currentLevel * requiredExpUp;
 
             updateExpSlider();
-            CharacterController.CharacterSingleton.upLevelShark(getMaxSpeed(), getMaxHealth(), getMaxSize());
+            CharacterController.getInstance().upLevelShark(getMaxSpeed(), getMaxHealth(), getMaxSize());
         }
     }
 
@@ -93,5 +97,18 @@ public class SharkDetails : MonoBehaviour
     {
         expSlider.value = currentExp;
         expSlider.maxValue = requiredExp;
+    }
+
+    public void increaseGold(float gold)
+    {
+        currentGold += gold;
+    }
+
+    public void saveData()
+    {
+        LocalDataController.getInstance().setSharkLevel(currentLevel);
+        LocalDataController.getInstance().setPlayerGold(currentGold);
+
+        Debug.Log(currentLevel);
     }
 }
