@@ -43,4 +43,9 @@ public class Home : SingletonBehaviour<Home>
             shopPanel.gameObject.SetActive(false);
         });
     }
+
+    public void goToUpgrade()
+    {
+
+    }
 }

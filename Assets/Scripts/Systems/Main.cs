@@ -11,7 +11,7 @@ using Commons.CollectionCommon;
 
 public class Main : SingletonBehaviour<Main>
 {
-    const string COIN_KEY = "COIN_KEY";
+    const string COIN_KEY = "PLAYER_GOLD";
     const string BOUGHT_KEY = "BOUGHT_KEY";
     const string WEARING_KEY = "WEARING_KEY";
 
@@ -43,7 +43,7 @@ public class Main : SingletonBehaviour<Main>
     }
 
     static List<string> _boughtAccessory;
-    // getter c?a các ph? ki?n ?ã mua
+    // getter c?a c?c ph? ki?n ?? mua
     public static List<string> boughtAccessory
     {
         get => _boughtAccessory;

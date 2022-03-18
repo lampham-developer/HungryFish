@@ -93472,6 +93472,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1106643921}
   - component: {fileID: 1106643922}
+  - component: {fileID: 1106643924}
   - component: {fileID: 1106643923}
   m_Layer: 0
   m_Name: GameController
@@ -93523,8 +93524,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 16172545b85ed44d999d08be06dc9443, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lvlTxt: {fileID: 1893087445}
+  lvlTxt: {fileID: 163451113}
   expSlider: {fileID: 1765273778}
+--- !u!114 &1106643924
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1106643920}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 966380bbb820d4ee28521c35e4f6275c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1175852016
 GameObject:
   m_ObjectHideFlags: 0
@@ -94108,7 +94121,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 2.329114, y: 1}
+    m_SensorSize: {x: 1.7887324, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
