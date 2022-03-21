@@ -46,6 +46,6 @@ public class Home : SingletonBehaviour<Home>
 
     public void goToUpgrade()
     {
-
+        Main.LoadScene("UpgradeScene");
     }
 }

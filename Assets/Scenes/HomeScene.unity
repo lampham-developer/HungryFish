@@ -477,7 +477,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 913308041}
         m_TargetAssemblyTypeName: Home, Assembly-CSharp
-        m_MethodName: GoToPlay
+        m_MethodName: goToUpgrade
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

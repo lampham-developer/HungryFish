@@ -11,6 +11,7 @@ public class LocalDataController : MonoBehaviour
     static string HIGH_SCORE = "HIGH_SCORE";
     static string BONUS_HP = "BONUS_HP";
     static string BONUS_SPEED = "BONUS_SPEED";
+    static string CURRENT_EXP = "CURRENT_EXP";
 
     private void Awake()
     {
@@ -90,6 +91,20 @@ public class LocalDataController : MonoBehaviour
     public void setBonusSpeed(float bonus)
     {
         PlayerPrefs.SetFloat(BONUS_SPEED, bonus);
+    }
+
+    public float getCurrentExp()
+    {
+        if (PlayerPrefs.HasKey(CURRENT_EXP))
+        {
+            return PlayerPrefs.GetFloat(CURRENT_EXP);
+        }
+        else return 0;
+    }
+
+    public void setCurrentExp(float exp)
+    {
+        PlayerPrefs.SetFloat(CURRENT_EXP, exp);
     }
 
 }
