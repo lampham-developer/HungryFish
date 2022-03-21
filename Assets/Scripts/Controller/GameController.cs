@@ -55,7 +55,7 @@ public class GameController : MonoBehaviour
         currentScore += score;
         scoreTxt.text = currentScore.ToString();
         SharkDetails.getInstance().increaseExp(score);
-        SharkDetails.getInstance().increaseExp(score);
+        SharkDetails.getInstance().increaseGold(score);
     }
     public void spawnFish(int n){
         current_fish+=n;

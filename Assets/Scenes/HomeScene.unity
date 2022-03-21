@@ -477,7 +477,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 913308041}
         m_TargetAssemblyTypeName: Home, Assembly-CSharp
-        m_MethodName: GoToPlay
+        m_MethodName: goToUpgrade
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3647,7 +3647,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Help
+  m_text: Upgrade
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 97113027633cd634e84c62c00a7ccd09, type: 2}
   m_sharedMaterial: {fileID: -5218387739081727194, guid: 97113027633cd634e84c62c00a7ccd09, type: 2}
