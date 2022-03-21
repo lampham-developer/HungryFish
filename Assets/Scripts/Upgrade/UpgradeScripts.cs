@@ -22,7 +22,7 @@ public class UpgradeScripts : MonoBehaviour
     private float currentSpeedUpgrade = 0;
     private float currentHpUpgrade = 0;
 
-    private float basePrice = 1;
+    private float basePrice = 1000;
     private float priceMultiple = 2;
 
     private float speedUpStep = 4;
@@ -72,6 +72,8 @@ public class UpgradeScripts : MonoBehaviour
         speedBar.Add(GameObject.Find("Speed3"));
         speedBar.Add(GameObject.Find("Speed4"));
         speedBar.Add(GameObject.Find("Speed5"));
+
+        maxUpgrade = hpBar.Count;
     }
 
     public void goBack()
@@ -94,7 +96,6 @@ public class UpgradeScripts : MonoBehaviour
             LocalDataController.getInstance().setPlayerGold(currentCoin);
 
             setText();
-            setUpgradeSpeedPrice();
             setUpgradeSpeedIcon();
 
             Debug.Log("Speed upgrade");
@@ -115,7 +116,6 @@ public class UpgradeScripts : MonoBehaviour
             LocalDataController.getInstance().setPlayerGold(currentCoin);
 
             setText();
-            setUpgradeHpPrice();
             setUpgradeHpIcon();
 
             Debug.Log("Hp upgrade");
@@ -128,7 +128,7 @@ public class UpgradeScripts : MonoBehaviour
         {
             healthPriceTxt.text = getPrice(currentHpUpgrade + 1).ToString();
 
-            if (getPrice(currentSpeedUpgrade + 1) > currentCoin)
+            if (getPrice(currentHpUpgrade + 1) > currentCoin)
             {
                 healthPriceTxt.color = Color.red;
             }
@@ -207,5 +207,23 @@ public class UpgradeScripts : MonoBehaviour
         currentCoinTxt.text = currentCoin.ToString();
         currentHealthTxt.text = currentBonusHp.ToString();
         currentSpeedTxt.text = currentBonusSpeed.ToString();
+        setUpgradeSpeedPrice();
+        setUpgradeHpPrice();
+    }
+
+    public void resetAllLocalData()
+    {
+        LocalDataController.getInstance().resetAllLocalData();
+        loadData();
+        setText();
+        setUpgradeHpIcon();
+        setUpgradeSpeedIcon();
+    }
+
+    public void cheatGold()
+    {
+        currentCoin += 1000;
+        LocalDataController.getInstance().setPlayerGold(currentCoin);
+        setText();
     }
 }

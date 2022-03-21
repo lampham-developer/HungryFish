@@ -107,4 +107,14 @@ public class LocalDataController : MonoBehaviour
         PlayerPrefs.SetFloat(CURRENT_EXP, exp);
     }
 
+    public void resetAllLocalData()
+    {
+        setBonusHp(0);
+        setBonusSpeed(0);
+        setCurrentExp(0);
+        setHighScore(0);
+        setPlayerGold(0);
+        setSharkLevel(1);
+    }
+
 }
