@@ -6,8 +6,11 @@ public class SpeedFish : AbstractSmallFish
 {
      float normalSpeed = 1f;
     float runSpeed = 4f;
-    private float increaseScore=15f;
+    //private float increaseScore=15f;
     private float increaseHealth=12f;
+
+    protected override int increaseScore => 15;
+
     public override void MoveSlowly()
     {
        if (timer.Finished)

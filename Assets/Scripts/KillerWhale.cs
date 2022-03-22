@@ -8,7 +8,7 @@ public class KillerWhale : MonoBehaviour
     float normalSpeed = 1f;
     float runSpeed = 3f;
     float increaseHealth = 20f;
-    float increaseScore = 20f;
+    int increaseScore = 20;
     float increaseExp = 20f;
     public float hp=50f;
     public float damage = 10f;

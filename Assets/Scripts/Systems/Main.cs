@@ -26,7 +26,7 @@ public class Main : SingletonBehaviour<Main>
     public List<Accessory> accessoryList;
 
     protected override bool isUnique { get => true; }
-    
+
     #region getter setter
     static int _coin;
     // set ti?n
@@ -35,7 +35,7 @@ public class Main : SingletonBehaviour<Main>
         get => _coin;
         set
         {
-            if (Home.Instance.gameObject.activeInHierarchy)
+            if (Home.Instance != null && Home.Instance.gameObject.activeInHierarchy)
                 Home.Instance.coin.text = value.ToString();
             _coin = value;
             PlayerPrefs.SetInt(COIN_KEY, value);
@@ -98,9 +98,9 @@ public class Main : SingletonBehaviour<Main>
         SceneManager.LoadScene("HomeScene");
     }
 
-    public void InitUI(GameObject gameObject)
+    public T InitUI<T>(T gameObject) where T : PopupBase
     {
-        Instantiate(gameObject, mainCanvas.transform);
+        return Instantiate(gameObject, mainCanvas.transform);
     }
 
     // loadScene mechanic

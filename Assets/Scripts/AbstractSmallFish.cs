@@ -8,6 +8,8 @@ public abstract class AbstractSmallFish : MonoBehaviour
     protected Timer timer;
      protected bool facingRight ;
     protected Vector2 direction;
+
+    protected abstract int increaseScore { get; }
     public virtual  void Start()
     {
         

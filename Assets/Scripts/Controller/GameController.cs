@@ -8,7 +8,10 @@ public class GameController : MonoBehaviour
 {
     public static GameController GameControllerSingleton;
     [SerializeField]
-    GameObject pauseMenuPopupTemplate;
+    PauseMenu pauseMenuPopupTemplate;
+    [SerializeField]
+    EndgamePopup endgamePopupTemplate;
+
      public int current_fish =0;
      public int current_mine =0;
 
@@ -32,6 +35,7 @@ public class GameController : MonoBehaviour
         Time.timeScale = 0f;
         highScore = LocalDataController.getInstance().getHighScore();
         saveData();
+        Main.Instance.InitUI(endgamePopupTemplate).SetScore(currentScore, highScore);
     }
 
     public void pauseGame()
@@ -50,7 +54,7 @@ public class GameController : MonoBehaviour
 
     }
 
-    public void scoreUp(float score)
+    public void scoreUp(int score)
     {
         currentScore += score;
         scoreTxt.text = currentScore.ToString();
