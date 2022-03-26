@@ -232,9 +232,26 @@ public class CharacterController : MonoBehaviour
         changeSharkSize(size);
     }
 
+    public void loadLevelShark(float mvSpeed, float health, float size)
+    {
+        maxMoveSpeed = mvSpeed;
+        maxHealth = health;
+        currentHealth = health;
+
+        setMaxHealthBar();
+        changeSharkSize(size);
+    }
+
     private void changeSharkSize(float newSize)
     {
-        currentScale *= newSize;
+        if (facingRight)
+        {
+            currentScale *= newSize;
+        } else
+        {
+            currentScale.x *= -newSize;
+            currentScale.y *= newSize;
+        }
         currentCameraScale *= newSize;
 
         transform.localScale = currentScale;
