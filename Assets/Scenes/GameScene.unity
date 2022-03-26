@@ -579,13 +579,78 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 709415538122711007, guid: f25c72a9213b51c429e3a2ba5ed14bcb, type: 3}
+    - {fileID: 4171106918361146886, guid: f25c72a9213b51c429e3a2ba5ed14bcb, type: 3}
+    - {fileID: 7949866862692176539, guid: f25c72a9213b51c429e3a2ba5ed14bcb, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: f25c72a9213b51c429e3a2ba5ed14bcb, type: 3}
 --- !u!4 &127803240 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7883144613881396855, guid: f25c72a9213b51c429e3a2ba5ed14bcb, type: 3}
   m_PrefabInstance: {fileID: 127803239}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &127803241 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 868098022644860834, guid: f25c72a9213b51c429e3a2ba5ed14bcb, type: 3}
+  m_PrefabInstance: {fileID: 127803239}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &127803242 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3423799922975911130, guid: f25c72a9213b51c429e3a2ba5ed14bcb, type: 3}
+  m_PrefabInstance: {fileID: 127803239}
+  m_PrefabAsset: {fileID: 0}
+--- !u!61 &127803243
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 127803241}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -1.265212, y: 0.0105216205}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.15, y: 0.15}
+    newSize: {x: 1, y: 0.5}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 3.1321225, y: 0.9286079}
+  m_EdgeRadius: 0
+--- !u!61 &127803244
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 127803242}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.094516516, y: -0.022316858}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 0.5}
+    newSize: {x: 1, y: 0.5}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.81096697, y: 0.3660989}
+  m_EdgeRadius: 0
 --- !u!82 &127803245
 AudioSource:
   m_ObjectHideFlags: 0
@@ -682,6 +747,32 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!61 &127803246
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 89417271}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.3747902, y: -0.16543269}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 7.9, y: 3.16}
+    newSize: {x: 7.9, y: 3.16}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 5.9461594, y: 2.35044}
+  m_EdgeRadius: 0
 --- !u!1 &159063925
 GameObject:
   m_ObjectHideFlags: 0
@@ -94122,7 +94213,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 2.0272954, y: 1}
+    m_SensorSize: {x: 2.135659, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -94184,7 +94275,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.020000001, y: 0.95600003}
   m_AnchorMax: {x: 0.20756252, y: 0.9834815}
-  m_AnchoredPosition: {x: -30.920013, y: -0.0010375977}
+  m_AnchoredPosition: {x: -30.920044, y: -0.0010375977}
   m_SizeDelta: {x: -55.44, y: 1.56}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1765273778
