@@ -8,14 +8,20 @@ public class GameController : MonoBehaviour
 {
     public static GameController GameControllerSingleton;
     [SerializeField]
-    GameObject pauseMenuPopupTemplate;
-     public int current_fish =0;
-     public int current_mine =0;
+
+    public GameObject pauseMenuPopupTemplate;
+
+    public int current_fish =0;
+    public int current_mine =0;
 
     private float currentScore = 0;
     public TextMeshProUGUI scoreTxt;
 
     private float highScore = 0;
+
+    private bool isGameEnded = false;
+    public GameObject endMenuPopupTemplate;
+
 
     void Awake()
     {
@@ -45,11 +51,6 @@ public class GameController : MonoBehaviour
         Time.timeScale = 1f;
     }
 
-    public void exitGame()
-    {
-
-    }
-
     public void scoreUp(float score)
     {
         currentScore += score;
@@ -72,11 +73,23 @@ public class GameController : MonoBehaviour
 
     private void saveData()
     {
-        if(currentScore > highScore)
+        if (!isGameEnded)
         {
-            LocalDataController.getInstance().setHighScore(currentScore);
-        }
+            if (currentScore > highScore)
+            {
+                LocalDataController.getInstance().setHighScore(currentScore);
+            }
 
-        SharkDetails.getInstance().saveData();
+            SharkDetails.getInstance().saveData();
+
+            Main.Instance.InitUI(endMenuPopupTemplate);
+
+            isGameEnded = true;
+        }
+    }
+
+    public float getScore()
+    {
+        return currentScore;
     }
 }

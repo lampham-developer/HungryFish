@@ -61,7 +61,7 @@ public class SharkDetails : MonoBehaviour
         Debug.Log("Load" + currentGold);
 
         updateExpSlider();
-        CharacterController.getInstance().upLevelShark(getMaxSpeed(), getMaxHealth(), getMaxSize());
+        CharacterController.getInstance().loadLevelShark(getMaxSpeed(), getMaxHealth(), getMaxSize());
     }
 
     public float getMaxHealth()

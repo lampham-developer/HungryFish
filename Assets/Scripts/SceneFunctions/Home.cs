@@ -15,7 +15,7 @@ public class Home : SingletonBehaviour<Home>
 
     [SerializeField]
     float duration = 0.5f;
-
+    public TextMeshProUGUI highScoreTxt;
 
 
     public void GoToPlay()
@@ -26,6 +26,8 @@ public class Home : SingletonBehaviour<Home>
     private void Start()
     {
         coin.text = Main.coin.ToString();
+        highScoreTxt.text = LocalDataController.getInstance().getHighScore().ToString();
+
     }
 
     public void GoToShop()
