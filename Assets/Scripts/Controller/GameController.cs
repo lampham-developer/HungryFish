@@ -20,6 +20,10 @@ public class GameController : MonoBehaviour
 
     private float highScore = 0;
 
+    private bool isGameEnded = false;
+    //public GameObject endMenuPopupTemplate;
+
+
     void Awake()
     {
         GameControllerSingleton = this;
@@ -49,11 +53,6 @@ public class GameController : MonoBehaviour
         Time.timeScale = 1f;
     }
 
-    public void exitGame()
-    {
-
-    }
-
     public void scoreUp(int score)
     {
         currentScore += score;
@@ -76,11 +75,23 @@ public class GameController : MonoBehaviour
 
     private void saveData()
     {
+        if (!isGameEnded)
+        {
         if(currentScore > highScore)
         {
             LocalDataController.getInstance().setHighScore(currentScore);
         }
 
         SharkDetails.getInstance().saveData();
+
+            //Main.Instance.InitUI(endgamePopupTemplate);
+
+            isGameEnded = true;
+    }
+}
+
+    public float getScore()
+    {
+        return currentScore;
     }
 }
