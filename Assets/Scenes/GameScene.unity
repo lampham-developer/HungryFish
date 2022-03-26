@@ -980,7 +980,7 @@ TilemapRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 2147229605
-  m_SortingLayer: 4
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_ChunkSize: {x: 32, y: 32, z: 32}
   m_ChunkCullingBounds: {x: 0, y: 0, z: 0}
@@ -93508,11 +93508,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 99124c0efa7897846a69cc14378fbe04, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pauseMenuPopupTemplate: {fileID: 8411450580494739683, guid: 92f889d5b0986db47ba850b88c7df848, type: 3}
+  pauseMenuPopupTemplate: {fileID: 7549469481025834073, guid: 92f889d5b0986db47ba850b88c7df848, type: 3}
+  endgamePopupTemplate: {fileID: 6470494839243172861, guid: 7b10f787a10bb404e8b07b7458c40e5d, type: 3}
   current_fish: 0
   current_mine: 0
   scoreTxt: {fileID: 1893087445}
-  endMenuPopupTemplate: {fileID: 8411450580494739683, guid: b6ef21218a0f24318827c1bb31cdce3e, type: 3}
 --- !u!114 &1106643923
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -94122,7 +94122,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.3333334, y: 1}
+    m_SensorSize: {x: 2.0272954, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0

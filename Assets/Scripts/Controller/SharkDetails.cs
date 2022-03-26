@@ -53,12 +53,12 @@ public class SharkDetails : MonoBehaviour
         requiredExp = baseExp + requiredExpUp * currentLevel;
         lvlTxt.text = currentLevel.ToString();
 
-        currentGold = LocalDataController.getInstance().getPlayerGold();
+        //currentGold = LocalDataController.getInstance().getPlayerGold();
         bonusHp = LocalDataController.getInstance().getBonusHp();
         bonusSpeed = LocalDataController.getInstance().getBonusSpeed();
         currentExp = LocalDataController.getInstance().getCurrentExp();
 
-        Debug.Log("Load" + currentGold);
+        //Debug.Log("Load" + currentGold);
 
         updateExpSlider();
         CharacterController.getInstance().loadLevelShark(getMaxSpeed(), getMaxHealth(), getMaxSize());
@@ -106,17 +106,18 @@ public class SharkDetails : MonoBehaviour
         expSlider.maxValue = requiredExp;
     }
 
-    public void increaseGold(float gold)
+    public void increaseGold(int gold)
     {
-        currentGold += gold;
-        Debug.Log(currentGold);
+        //currentGold += gold;
+        //Debug.Log(currentGold);
+        Main.coin += gold;
     }
 
     public void saveData()
     {
         LocalDataController.getInstance().setSharkLevel(currentLevel);
-        LocalDataController.getInstance().setPlayerGold(currentGold);
+        //LocalDataController.getInstance().setPlayerGold(currentGold);
 
-        Debug.Log("Saved" + currentGold);
+        //Debug.Log("Saved" + currentGold);
     }
 }

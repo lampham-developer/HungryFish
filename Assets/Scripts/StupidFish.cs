@@ -8,9 +8,11 @@ public class StupidFish : AbstractSmallFish
     float normalSpeed = 1f;
     float runSpeed = 3f;
     float increaseHealth = 10f;
-    float increaseScore = 10f;
-    float increaseExp = 10f;
-   
+
+    protected override int increaseScore => 10;
+
+    //float increaseExp = 10f;
+
     // Start is called before the first frame update
     public override void Start()
     {

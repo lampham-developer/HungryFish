@@ -8,8 +8,10 @@ public class HerdFish : AbstractSmallFish
     float runSpeed = 3f;
     int active = 0;
     Vector2 groupDirection = new Vector2(1, 0);
-    private float increaseScore=5f;
+    //private float increaseScore=5f;
     private float increaseHealth=5f;
+
+    protected override int increaseScore => 5;
 
     public override void MoveSlowly()
     {

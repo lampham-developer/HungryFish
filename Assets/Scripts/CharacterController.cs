@@ -40,6 +40,8 @@ public class CharacterController : MonoBehaviour
     private float gameTime = 0f;
     private float decreaseHeathMultiple = 1;
 
+    bool isGameEnded = false;
+
     private void Awake()
     {
         CharacterSingleton = this;
@@ -60,6 +62,8 @@ public class CharacterController : MonoBehaviour
 
     private void Update()
     {
+        if (isGameEnded)
+            return;
         //update game time
         gameTime += Time.deltaTime;
 
@@ -184,6 +188,7 @@ public class CharacterController : MonoBehaviour
 
         if (currentHealth <= 0)
         {
+            isGameEnded = true;
             GameController.GameControllerSingleton.endGame();
 
         }
@@ -200,7 +205,7 @@ public class CharacterController : MonoBehaviour
                 {
                     Destroy(obj);
                     increaseHealth(5f);
-                    GameController.GameControllerSingleton.scoreUp(5f);
+                    GameController.GameControllerSingleton.scoreUp(5);
                     GameObject explo = Instantiate<GameObject>(explosion, obj.transform.position, Quaternion.identity);
 
                 }
