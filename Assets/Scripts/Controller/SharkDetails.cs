@@ -29,6 +29,7 @@ public class SharkDetails : MonoBehaviour
     private float bonusSpeed = 0;
 
     public Slider expSlider;
+    public TextMeshProUGUI coinTxt;
 
     private void Awake()
     {
@@ -61,6 +62,7 @@ public class SharkDetails : MonoBehaviour
         //Debug.Log("Load" + currentGold);
 
         updateExpSlider();
+        coinTxt.text = Main.coin.ToString();
         CharacterController.getInstance().loadLevelShark(getMaxSpeed(), getMaxHealth(), getMaxSize());
     }
 
@@ -111,6 +113,7 @@ public class SharkDetails : MonoBehaviour
         //currentGold += gold;
         //Debug.Log(currentGold);
         Main.coin += gold;
+        coinTxt.text = Main.coin.ToString();
     }
 
     public void saveData()
